@@ -1,0 +1,42 @@
+db.Clientes.insertMany([
+    {
+        ClienteID: 1,
+        nombre: "Juan",
+        apellidos: "Pérez",
+        correo_electronico: "juan.perez@example.com",
+        telefono: "555-0123",
+        pais: "México",
+        fecha_registro: new Date("2023-01-15"),
+        favoritos: [
+            {
+                id_producto: 1,
+                nombre_producto: "Huarache Bordado",
+                precio: 299.99,
+                img_producto: "url_img_huarache_bordado"
+            },
+            {
+                id_producto: 2,
+                nombre_producto: "Huarache Troquelado",
+                precio: 349.99,
+                img_producto: "url_img_huarache_troquelado"
+            }
+        ]
+    },
+    {
+        ClienteID: 2,
+        nombre: "Ana",
+        apellidos: "González",
+        correo_electronico: "ana.gonzalez@example.com",
+        telefono: "555-0456",
+        pais: "México",
+        fecha_registro: new Date("2023-02-20"),
+        favoritos: [
+            {
+                id_producto: 3,
+                nombre_producto: "Huarache Láser",
+                precio: 399.99,
+                img_producto: "url_img_huarache_laser"
+            }
+        ]
+    }
+]);

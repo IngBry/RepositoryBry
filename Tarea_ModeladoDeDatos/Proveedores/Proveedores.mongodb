@@ -1,0 +1,19 @@
+use("StylishSteps");
+
+db.createCollection("Proveedores", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Proveedores",
+            required: ["ProveedorID", "nombre", "apellidos", "correo_electronico", "telefono", "nombre_compania"],
+            properties: {
+                ProveedorID: { bsonType: "int" },
+                nombre: { bsonType: "string", description: "Nombre del proveedor" },
+                apellidos: { bsonType: "string", description: "Apellidos del proveedor" },
+                correo_electronico: { bsonType: "string", description: "Correo electrónico del proveedor" },
+                telefono: { bsonType: "string", description: "Teléfono del proveedor" },
+                nombre_compania: { bsonType: "string", description: "Nombre de la compañía del proveedor" }
+            }
+        }
+    }
+});

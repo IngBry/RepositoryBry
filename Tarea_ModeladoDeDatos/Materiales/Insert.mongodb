@@ -1,0 +1,18 @@
+db.Proveedores.insertMany([
+    {
+        ProveedorID: 1,
+        nombre: "Carlos",
+        apellidos: "Martínez",
+        correo_electronico: "carlos.martinez@empresa.com",
+        telefono: "555-0789",
+        nombre_compania: "Huaraches S.A."
+    },
+    {
+        ProveedorID: 2,
+        nombre: "Laura",
+        apellidos: "Ramírez",
+        correo_electronico: "laura.ramirez@empresa.com",
+        telefono: "555-0987",
+        nombre_compania: "Huaraches de Calidad"
+    }
+]);

@@ -1,0 +1,35 @@
+use("StylishSteps");
+
+db.createCollection("Clientes", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Clientes",
+            required: ["ClienteID", "nombre", "apellidos", "correo_electronico", "telefono", "fecha_registro"],
+            properties: {
+                ClienteID: { bsonType: "int" },
+                nombre: { bsonType: "string", description: "Nombre del cliente" },
+                apellidos: { bsonType: "string", description: "Apellidos del cliente" },
+                correo_electronico: { bsonType: "string", description: "Correo electrónico del cliente" },
+                telefono: { bsonType: "string", description: "Teléfono del cliente" },
+                pais: { bsonType: "string", description: "País del cliente" },
+                fecha_registro: { bsonType: "date", description: "Fecha de registro del cliente" },
+                favoritos: {
+                    bsonType: "array",
+                    description: "Lista de productos favoritos del cliente",
+                    items: {
+                        bsonType: "object",
+                        title: "Validación de Producto Favorito",
+                        required: ["id_producto", "nombre_producto", "precio"],
+                        properties: {
+                            id_producto: { bsonType: "int" },
+                            nombre_producto: { bsonType: "string", description: "Nombre del producto" },
+                            precio: { bsonType: "double", description: "Precio del producto" },
+                            img_producto: { bsonType: "string", description: "URL de la imagen del producto" }
+                        }
+                    }
+                }
+            }
+        }
+    }
+});

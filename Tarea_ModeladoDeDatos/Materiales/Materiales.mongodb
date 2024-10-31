@@ -1,0 +1,18 @@
+use("StylishSteps");
+
+db.createCollection("Materiales", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Materiales",
+            required: ["MaterialID", "id_proveedor", "nombre_material", "cantidad_disponible"],
+            properties: {
+                MaterialID: { bsonType: "int" },
+                id_proveedor: { bsonType: "int", description: "ID del proveedor al que pertenece el material" },
+                nombre_material: { bsonType: "string", description: "Nombre del material" },
+                cantidad_disponible: { bsonType: "int", description: "Cantidad disponible del material" },
+                unidad_medida: { bsonType: "string", description: "Unidad de medida del material" }
+            }
+        }
+    }
+});

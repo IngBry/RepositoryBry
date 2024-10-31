@@ -1,0 +1,23 @@
+db.Materiales.insertMany([
+    {
+        MaterialID: 1,
+        id_proveedor: 1,
+        nombre_material: "Cuero",
+        cantidad_disponible: 100,
+        unidad_medida: "m²"
+    },
+    {
+        MaterialID: 2,
+        id_proveedor: 1,
+        nombre_material: "Goma",
+        cantidad_disponible: 200,
+        unidad_medida: "m²"
+    },
+    {
+        MaterialID: 3,
+        id_proveedor: 2,
+        nombre_material: "Tela",
+        cantidad_disponible: 150,
+        unidad_medida: "m²"
+    }
+]);
